@@ -21,8 +21,14 @@ connection.once('open', ()=> {
         console.log(error)
     }
 });
-const projectsRouter = require('./api/projects.route');
+const projectsRouter = require('./backend/api/projects.route');
 app.use("/api/v1/projects", projectsRouter)
+
+if(process.env.NODE_ENV=== 'production') {
+    app.use(express.static('frontend2.0/build'));
+}
+
+
 
 app.listen(port, ()=> {
     console.log('server is running on port: ' + port)
