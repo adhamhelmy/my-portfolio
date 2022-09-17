@@ -1,6 +1,6 @@
 //import './App.css';
 import {Switch, Route, Link, useHref} from "react-router-dom"
-import "bootstrap/dist/css/bootstrap.min.css"
+//import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from './Navbar.js';
 import App from "../App";
 import React, { useState, useEffect } from 'react';
