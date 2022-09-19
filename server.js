@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.PROJECTS_DB_URI;
-mongoose.connect(uri , {
+mongoose.connect(process.env.PROJECTS_DB_URI , {
     useNewUrlParser: false,
     useUnifiedTopology: true
 });
