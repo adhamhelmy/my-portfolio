@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+require('dotenv').config({ path: 'ENV_FILENAME' });
 require('dotenv').config();
 
 const app = express();
@@ -27,6 +28,7 @@ app.use("/api/v1/projects", projectsRouter)
 if(process.env.NODE_ENV=== 'production') {
     app.use(express.static('frontend2.0/build'));
 }
+// code above was addd for deployment
 
 
 
