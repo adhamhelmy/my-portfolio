@@ -1,5 +1,5 @@
 //import './App.css';
-import {Switch, Route, Link, useHref} from "react-router-dom"
+import {Switch, Route, Link, useHref, useNavigate} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from './Navbar.js';
 import App from "../App";
@@ -26,9 +26,9 @@ const Login = props =>  {
   function goToAdminPage()  {
     if(user.name == "adham" && user.password =="dodo")
     {
-        
-        window.location.href = "/adminpage"
-        console.log("right credentials")
+      navigate("../adminpage", { replace: true });
+      //window.location.href = "/adminpage"
+      console.log("right credentials")
     }
     else{
       console.log("wrong credentials")
