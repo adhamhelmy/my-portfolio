@@ -51,7 +51,7 @@ const Login = props =>  {
                 <input type="password" className="form-control" id="password" name="password" value={user.password} placeholder="Password" onChange={handleInputChange}></input>
             </div>
   
-            <button  className="btn btn-primary" onClick={goToAdminPage}>Submit</button>
+            <button  className="btn btn-primary" type="reset" onClick={goToAdminPage}>Submit</button>
         </div>
     </div>
     
