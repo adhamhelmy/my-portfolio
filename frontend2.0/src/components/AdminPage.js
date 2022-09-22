@@ -36,7 +36,7 @@ const AdminPage = props => {
   const deletePost = (post) => {
     console.log(post)
     ProjectData.deleteProject(post)
-    window.location.reload()
+    this.setState({});
   };
   
   
