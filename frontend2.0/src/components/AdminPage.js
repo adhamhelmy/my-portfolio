@@ -30,9 +30,9 @@ const AdminPage = props => {
   let navigate = useNavigate();
 
   function goToAddPost() {
-    navigate("../adminpage", { replace: true });
+    navigate("../addproject", { replace: true });
   };
-  
+
   const deletePost = (post) => {
     console.log(post)
     ProjectData.deleteProject(post)
