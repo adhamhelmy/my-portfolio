@@ -6,7 +6,7 @@ import App from "../App";
 import React, { useState, useEffect } from 'react';
 import AdminPage from "./AdminPage.js";
 
-const Login = props =>  {
+function Login (props) {
   
   const initialUserState = {
     name: "",
@@ -21,12 +21,12 @@ const Login = props =>  {
     console.log(user)
   };
 
-  
+  let navigate = useNavigate();
 
   function goToAdminPage()  {
     if(user.name == "adham" && user.password =="dodo")
     {
-      useNavigate("../adminpage", { replace: true });
+      navigate("../adminpage", { replace: true });
       //window.location.href = "/adminpage"
       console.log("right credentials")
     }
