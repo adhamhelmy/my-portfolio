@@ -33,6 +33,9 @@ if(process.env.NODE_ENV=== 'production') {
 }
 // code above was addd for deployment
 
+app.get('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+  })
 
 
 app.listen(port, ()=> {
