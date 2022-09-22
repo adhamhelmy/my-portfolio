@@ -32,7 +32,7 @@ if(process.env.NODE_ENV=== 'production') {
     app.use(express.static('frontend2.0/build'));
 }
 // code above was addd for deployment
-
+app.use(express.static(__dirname + '/public'))
 app.get('*', function (request, response){
     response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
   })
