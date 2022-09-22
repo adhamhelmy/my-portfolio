@@ -4,6 +4,7 @@ import {React, useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import AdminNavbar from './AdminNavbar';
 import ProjectData from '../Services/Project';
+import { useNavigate } from 'react-router';
 const AddProject = props => {
 
   const initialPostState = {
@@ -19,11 +20,14 @@ const AddProject = props => {
     setPost({ ...post, [name]: value , [descrption]: value, [url]: value});
     //console.log(post)
   };
+
+  let navigate = useNavigate()
+
   const addPost = () => {
     ProjectData.createProject(post)
       .then(post => {
         console.log(post);
-        window.location.href = "/adminpage"
+        navigate("../adminpage", { replace: true });
       })
       .catch(e => {
         console.log(e);
