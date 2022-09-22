@@ -15,7 +15,7 @@ const AdminPage = props => {
   useEffect(() => {
     retrieveProjects();  
   }, []);
-  
+  const [value,setValue] = useState();
   const retrieveProjects = () => {
     ProjectData.getAll()
       .then(response => {
@@ -36,7 +36,7 @@ const AdminPage = props => {
   const deletePost = (post) => {
     console.log(post)
     ProjectData.deleteProject(post)
-    this.setState({});
+    setValue({});
   };
   
   
