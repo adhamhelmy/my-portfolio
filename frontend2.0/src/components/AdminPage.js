@@ -31,15 +31,12 @@ const AdminPage = props => {
 
   function goToAddPost() {
     navigate("../adminpage", { replace: true });
-    
   };
+  
   const deletePost = (post) => {
     console.log(post)
-
-    //db.projects.remove( {"_id": postId});
-
     ProjectData.deleteProject(post)
-    window.location.href = "/adminpage"
+    navigate("../adminpage", { replace: true });
   };
   
   
