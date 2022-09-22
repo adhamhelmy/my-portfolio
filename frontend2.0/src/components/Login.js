@@ -26,7 +26,7 @@ const Login = props =>  {
   function goToAdminPage()  {
     if(user.name == "adham" && user.password =="dodo")
     {
-      navigate("../adminpage", { replace: true });
+      useNavigate("../adminpage", { replace: true });
       //window.location.href = "/adminpage"
       console.log("right credentials")
     }
