@@ -13,8 +13,6 @@ const Navbar = () => {
                 <Link to={"/projects"} className="nav-link" style={{color:"white"}}>
                     Projects
                 </Link>
-                history.push(location)
-                history.replace(location)
                 </li>
                 <li className="nav-item" >            
                 <Link to={"/login"} className="nav-link" style={{color:"white"}}>
