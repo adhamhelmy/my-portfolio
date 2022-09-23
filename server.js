@@ -35,8 +35,9 @@ if(process.env.NODE_ENV=== 'production') {
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
 app.get('/*', function (req, res){
-    res.json('we got here')
-    // response.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
+    //res.json(__dirname)
+    
+    res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
   })
 
 
