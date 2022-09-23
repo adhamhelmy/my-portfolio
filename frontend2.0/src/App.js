@@ -9,16 +9,16 @@ import ProjectData from './Services/Project';
 import React from 'react';
 import AdminPage from './components/AdminPage';
 import AddProject from './components/AddProject'
-
+import { History } from 'history';
 //import addproject from 
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Test/>}/>  
+        <Route path="/" element={<Test/>}/>  
         
-        <Route path="/projects" element={<ProjectsList />} />
+        <Route path="/projects" element={<ProjectsList />}  />
 
         <Route path="/login" element={<Login />} />    
 

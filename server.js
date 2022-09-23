@@ -37,7 +37,9 @@ app.use(express.static(__dirname + '/public'))
 app.get('*', function (request, response){
     response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
   })
-
+  app.get('/projects', function (req, res, next) {
+    res.render('frontend2.0/src/ProjectsList.js');
+})
 
 app.listen(port, ()=> {
     console.log('server is running on port: ' + port)

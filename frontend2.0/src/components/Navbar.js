@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import { BrowserHistory } from "history";
 
 const Navbar = () => {
     return(
@@ -12,11 +12,15 @@ const Navbar = () => {
                 <Link to={"/projects"} className="nav-link" style={{color:"white"}}>
                     Projects
                 </Link>
+                history.push(location)
+                history.replace(location)
                 </li>
                 <li className="nav-item" >            
                 <Link to={"/login"} className="nav-link" style={{color:"white"}}>
                     Login
                 </Link>
+                history.push(location)
+                history.replace(location)
                 </li>
             </ul>
         </nav>
