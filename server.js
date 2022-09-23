@@ -37,12 +37,12 @@ app.use(express.static(__dirname + '/public'))
 app.get('/*', function (req, res){
     //res.json(__dirname)
     
-    res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
+    res.sendFile(path.join(__dirname, 'frontend2.0/public/test.html'))
   })
   app.get('/projects', function (req, res){
     //res.json(__dirname)
     
-    res.sendFile('my-portfolio\frontend2.0\src\components\ProjectsList.js')
+    res.sendFile('my-portfolio/frontend2.0/src/components/ProjectsList.js')
   })
 
 app.listen(port, ()=> {
