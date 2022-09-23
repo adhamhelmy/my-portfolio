@@ -39,7 +39,11 @@ app.get('/*', function (req, res){
     
     res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
   })
-
+  app.get('/projects', function (req, res){
+    //res.json(__dirname)
+    
+    res.sendFile('my-portfolio\frontend2.0\src\components\ProjectsList.js')
+  })
 
 app.listen(port, ()=> {
     console.log('server is running on port: ' + port)
