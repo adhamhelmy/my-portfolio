@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { BrowserHistory } from "history";
+import { Historys } from "history";
 
 const Navbar = () => {
     return(
@@ -19,8 +20,6 @@ const Navbar = () => {
                 <Link to={"/login"} className="nav-link" style={{color:"white"}}>
                     Login
                 </Link>
-                history.push(location)
-                history.replace(location)
                 </li>
             </ul>
         </nav>
