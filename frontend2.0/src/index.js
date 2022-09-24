@@ -36,19 +36,9 @@ root.render(
 );
 const projects = ReactDOM.createRoot(document.getElementById('projects'));
 root.render(
-  <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Test/>}/>  
-        
-        <Route path="/projects" element={<ProjectsList />}  />
-
-        <Route path="/login" element={<Login />} />    
-
-        <Route path="/adminpage" element={<AdminPage />} />
-
-        <Route path="/addproject" element={<AddProject />} />
-      </Routes>
-    </BrowserRouter>
+  <StrictMode>
+    <ProjectsList/>
+  </StrictMode>
 );
 
 
