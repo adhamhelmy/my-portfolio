@@ -10,7 +10,7 @@ import Login from './components/Login';
 import {StrictMode} from 'react';
 import ProjectsList from './components/ProjectsList';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
+
 import ProjectData from './Services/Project';
 import React from 'react';
 import AdminPage from './components/AdminPage';
