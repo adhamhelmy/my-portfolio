@@ -37,7 +37,7 @@ app.use(express.static(__dirname + '/public'))
 app.get('/*', function (req, res){
     //res.json(__dirname)
     
-    res.sendFile(path.join(__dirname, 'frontend2.0/public/test.html'))
+    res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
   })
   app.get('/projects', function (req, res){
     //res.json(__dirname)
