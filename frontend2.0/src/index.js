@@ -11,8 +11,8 @@ import {StrictMode} from 'react';
 import ProjectsList from './components/ProjectsList';
 import Navbar from './components/Navbar';
 
-import ProjectData from './Services/Project';
-import React from 'react';
+
+
 import AdminPage from './components/AdminPage';
 import AddProject from './components/AddProject'
 import Test from './App'
