@@ -5,7 +5,12 @@ const mongoose = require('mongoose');
 const ReactRouter = require('react-router');
 var Redux = require('redux');
 var Provider = require('react-redux').Provider;
+var Login = require ('./components/Login');
 
+var ProjectsList = require ('./components/ProjectsList');
+var AdminPage = require ('./components/AdminPage');
+var AddProject = require ('./components/AddProject')
+var Test = require ('./App')
 require('dotenv').config();
 
 const app = express();
@@ -44,17 +49,17 @@ app.get('/*', function (req, res){
     
     ReactRouter.matchRoutes({
         routes: (
-            <ReactRouter.Router>
-                <ReactRouter.Route path="/" element={<Test/>}/>  
+            <Router>
+                <Route path="/" element={<Test/>}/>  
                 
-                <ReactRouter.Route path="/projects" element={<ProjectsList />}  />
+                <Route path="/projects" element={<ProjectsList />}  />
 
-                <ReactRouter.Route path="/login" element={<Login />} />    
+                <Route path="/login" element={<Login />} />    
 
-                <ReactRouter.Route path="/adminpage" element={<AdminPage />} />
+                <Route path="/adminpage" element={<AdminPage />} />
 
-                <ReactRouter.Route path="/addproject" element={<AddProject />} />
-            </ReactRouter.Router>
+                <Route path="/addproject" element={<AddProject />} />
+            </Router>
         ),
         location: request.url
     },
