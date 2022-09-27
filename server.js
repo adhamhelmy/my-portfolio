@@ -14,6 +14,8 @@ var Test = require ('./App')
 require('dotenv').config();
 
 const app = express();
+var router = require('express').Router();
+
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -43,7 +45,7 @@ if(process.env.NODE_ENV=== 'production') {
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
 function reducer(state) { return state; }
-app.get('/*', function (req, res){
+router.get('/*', function (req, res){
     var initialState = { title: 'Universal React' };
     var store = Redux.createStore(reducer, initialState);
     
@@ -77,11 +79,7 @@ app.get('/*', function (req, res){
     });
     //res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
   })
-  app.get('/projects', function (req, res){
-    //res.json(__dirname)
-    
-    res.sendFile(path.join(__dirname, 'frontend2.0/public/projects.html'))
-  })
+  
   
   
 
