@@ -36,9 +36,9 @@ root.render(
 );
 const projects = ReactDOM.createRoot(document.getElementById('projects'));
 root.render(
-  <StrictMode>
+  <React.StrictMode>
     <ProjectsList/>
-  </StrictMode>
+  </React.StrictMode>
 );
 
 

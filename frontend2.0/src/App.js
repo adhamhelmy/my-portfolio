@@ -18,13 +18,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Test/>}/>  
         
-        <Route path="/projects" element={<ProjectsList />}  />
+        <Route path="/#/projects" element={<ProjectsList />}  />
 
-        <Route path="/login" element={<Login />} />    
+        <Route path="/#/login" element={<Login />} />    
 
-        <Route path="/adminpage" element={<AdminPage />} />
+        <Route path="/#/adminpage" element={<AdminPage />} />
 
-        <Route path="/addproject" element={<AddProject />} />
+        <Route path="/#/addproject" element={<AddProject />} />
       </Routes>
     </BrowserRouter>
   );
