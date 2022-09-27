@@ -4,13 +4,13 @@ var AdminPage = require ('./components/AdminPage');
 var AddProject = require ('./components/AddProject')
 var Test = require ('./App')
 
-import React from 'react';
-import {
-    Router,
-    Route,
-    IndexRoute,
-    browserHistory
-} from 'react-router';
+// import React from 'react';
+// import {
+//     Router,
+//     Route,
+//     IndexRoute,
+//     browserHistory
+// } from 'react-router';
 
 module.exports = (
     <Router history={browserHistory}>
