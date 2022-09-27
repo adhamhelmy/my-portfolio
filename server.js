@@ -56,9 +56,7 @@ router.get('/*', function (req, res){
     function(error, redirectLocation, renderProps) {
         if (renderProps) {
             var html = ReactDOMServer.renderToString(
-                <Provider store={store}>
-                    <ReactRouter.RouterContext {...renderProps} />
-                </Provider>
+                require('./router.jsx')
             );
             res.send(html);
         } else {
