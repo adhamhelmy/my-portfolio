@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path')
 const cors = require('cors');
 const mongoose = require('mongoose');
-
+const ReactRouter = require('react-router');
 
 require('dotenv').config();
 
@@ -27,6 +27,7 @@ connection.once('open', ()=> {
     }
 });
 const projectsRouter = require('./backend/api/projects.route');
+const { request } = require('http');
 app.use("/api/v1/projects", projectsRouter)
 
 if(process.env.NODE_ENV=== 'production') {
@@ -35,9 +36,35 @@ if(process.env.NODE_ENV=== 'production') {
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
 app.get('/*', function (req, res){
-    //res.json(__dirname)
-    
-    res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
+    ReactRouter.matchRoutes({
+        routes: (
+            <ReactRouter.Router>
+                <ReactRouter.Route path="/" element={<Test/>}/>  
+                
+                <ReactRouter.Route path="/projects" element={<ProjectsList />}  />
+
+                <ReactRouter.Route path="/login" element={<Login />} />    
+
+                <ReactRouter.Route path="/adminpage" element={<AdminPage />} />
+
+                <ReactRouter.Route path="/addproject" element={<AddProject />} />
+            </ReactRouter.Router>
+        ),
+        location: request.url
+    },
+    function(error, redirectLocation, renderProps) {
+        if (renderProps) {
+            var html = ReactDOMServer.renderToString(
+                <Provider store={store}>
+                    <ReactRouter.RouterContext {...renderProps} />
+                </Provider>
+            );
+            res.send(html);
+        } else {
+            res.status(404).send('Not Found');
+        }
+    });
+    //res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
   })
   app.get('/projects', function (req, res){
     //res.json(__dirname)
