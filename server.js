@@ -50,19 +50,7 @@ router.get('/*', function (req, res){
     var store = Redux.createStore(reducer, initialState);
     
     ReactRouter.matchRoutes({
-        routes: (
-            <Router>
-                <Route path="/" element={<Test/>}/>  
-                
-                <Route path="/projects" element={<ProjectsList />}  />
-
-                <Route path="/login" element={<Login />} />    
-
-                <Route path="/adminpage" element={<AdminPage />} />
-
-                <Route path="/addproject" element={<AddProject />} />
-            </Router>
-        ),
+        routes: require('./routes.jsx'),
         location: request.url
     },
     function(error, redirectLocation, renderProps) {
