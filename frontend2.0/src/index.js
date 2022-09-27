@@ -34,11 +34,6 @@ root.render(
       </Routes>
     </BrowserRouter>
 );
-const projects = ReactDOM.createRoot(document.getElementById('projects'));
-root.render(
-  <React.StrictMode>
-    <ProjectsList/>
-  </React.StrictMode>
-);
+
 
 
