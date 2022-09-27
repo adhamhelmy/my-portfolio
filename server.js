@@ -3,6 +3,8 @@ const path = require('path')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const ReactRouter = require('react-router');
+var Redux = require('redux');
+var Provider = require('react-redux').Provider;
 
 require('dotenv').config();
 
@@ -35,7 +37,11 @@ if(process.env.NODE_ENV=== 'production') {
 }
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
+function reducer(state) { return state; }
 app.get('/*', function (req, res){
+    var initialState = { title: 'Universal React' };
+    var store = Redux.createStore(reducer, initialState);
+    
     ReactRouter.matchRoutes({
         routes: (
             <ReactRouter.Router>
