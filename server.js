@@ -2,20 +2,11 @@ const express = require('express');
 const path = require('path')
 const cors = require('cors');
 const mongoose = require('mongoose');
-const ReactRouter = require('react-router');
-var Redux = require('redux');
-var Provider = require('react-redux').Provider;
-var Login = require ('./components/Login');
 
-var ProjectsList = require ('./components/ProjectsList');
-var AdminPage = require ('./components/AdminPage');
-var AddProject = require ('./components/AddProject')
-var Test = require ('./App')
+
 require('dotenv').config();
 
 const app = express();
-var router = require('express').Router();
-
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -36,7 +27,6 @@ connection.once('open', ()=> {
     }
 });
 const projectsRouter = require('./backend/api/projects.route');
-const { request } = require('http');
 app.use("/api/v1/projects", projectsRouter)
 
 if(process.env.NODE_ENV=== 'production') {
@@ -44,28 +34,17 @@ if(process.env.NODE_ENV=== 'production') {
 }
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
-function reducer(state) { return state; }
-router.get('/*', function (req, res){
-    var initialState = { title: 'Universal React' };
-    var store = Redux.createStore(reducer, initialState);
+app.use(require('./index.jsx'))
+// app.get('/*', function (req, res){
+//     //res.json(__dirname)
     
-    ReactRouter.matchRoutes({
-        routes: require('./routes.jsx'),
-        location: request.url
-    },
-    function(error, redirectLocation, renderProps) {
-        if (renderProps) {
-            var html = ReactDOMServer.renderToString(
-                require('./router.jsx')
-            );
-            res.send(html);
-        } else {
-            res.status(404).send('Not Found');
-        }
-    });
-    //res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
-  })
-  
+//     res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
+//   })
+//   app.get('/projects', function (req, res){
+//     //res.json(__dirname)
+    
+//     res.sendFile(path.join(__dirname, 'frontend2.0/public/projects.html'))
+//   })
   
   
 
