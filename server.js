@@ -40,12 +40,7 @@ app.use(require('./ServerRouting/index.jsx'))
     
 //     res.sendFile(path.join(__dirname, 'frontend2.0/public/index.html'))
 //   })
-//   app.get('/projects', function (req, res){
-//     //res.json(__dirname)
-    
-//     res.sendFile(path.join(__dirname, 'frontend2.0/public/projects.html'))
-//   })
-  
+
   
 
 app.listen(port, ()=> {

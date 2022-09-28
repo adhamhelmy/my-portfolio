@@ -18,7 +18,7 @@ var Provider = require('react-redux').Provider;
 // } from 'react-router';
 
 module.exports = (
-    <Router history={browserHistory}>
+    <ReactRouter>
         <Route path="/" element={<Test/>}/>  
         
         <Route path="/projects" element={<ProjectsList />}  />
@@ -28,5 +28,5 @@ module.exports = (
         <Route path="/adminpage" element={<AdminPage />} />
 
         <Route path="/addproject" element={<AddProject />} />
-    </Router>
+    </ReactRouter>
 )
