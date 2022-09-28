@@ -34,7 +34,7 @@ if(process.env.NODE_ENV=== 'production') {
 }
 // code above was addd for deployment
 app.use(express.static(__dirname + '/public'))
-app.use(require('./index.jsx'))
+app.use(require('./ServerRouting/index.jsx'))
 // app.get('/*', function (req, res){
 //     //res.json(__dirname)
     
